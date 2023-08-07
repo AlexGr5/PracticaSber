@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<!--
+<div th:each="person : ${people}">
+    <a th:href="@{/logs/{id}(id=${person.getId()})}"
+       th:text="${person.getName() + ', ' + person.getAge()}">user</a>
+</div>
+-->
+
+Parser Logs!
+
+<br/>
+<hr/>
+
+<a href="/logs/new">Input patterns</a>
+<nobr style="color:red" >*</nobr>
+<nobr th:text="${input.getPattern()}"></nobr>
+<nobr style="color:red" >*</nobr>
+<nobr th:text="${input.getSortPattern()}"></nobr>
+<br/>
+<a href="/logs/load">Load file</a>
+
+<nobr style="color:red" th:if="${!input.fileNotEmpty()}" th:text="X">Part</nobr>
+<nobr style="color:green" th:if="${input.fileNotEmpty()}" th:text="V">Part</nobr>
+
+<br/>
+<a style="color:green" th:if="${input.fileNotEmpty()}" href="/logs/logs">View logs</a>
+
+<br/>
+<br/>
+<br/>
+
+<a style="color:gray" th:if="${input.fileNotEmpty()}" href="/logs/clear">Clear</a>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs</title>
+</head>
+<body>
+
+
+<a href="/logs">Back</a>
+
+<br/>
+<br/>
+
+<!-- *************************************************************** -->
+<tabel th:each="pattern, state : ${viewparam.getPatterns()}">
+    <input th:type="text" readonly th:size="${viewparam.getLengthForIndex(state.index)}" th:value="${pattern}">
+    <!--<nobr th:text="${partlog + '|'}">Part</nobr>-->
+</tabel>
+
+<hr/>
+
+<tabel th:each="logs : ${viewparam.getLogs()}">
+    <tr th:each="partlog, state : ${logs.getOneLogRow()}">
+        <input readonly th:size="${viewparam.getLengthForIndex(state.index)}" th:style="${logs.getColor()}" th:value="${partlog}">
+        <!--<nobr th:style="${logs.getColor()}" th:if="${state.index == viewparam.getNumberLight()}" th:text="${partlog + '|'}">Part</nobr>
+        <nobr th:if="${state.index != viewparam.getNumberLight()}"  th:text="${partlog + '|'}">Part</nobr>-->
+        <!--<nobr th:text="${partlog + '|'}">Part</nobr>-->
+    </tr>
+    <br/>
+</tabel>
+<!-- *************************************************************** -->
+
+
+
+<!-- *************************************************************** -->
+<!--   РАБОТАЕТ, НО НЕ САМЫЙ КРАСИВЫЙ ВИД
+<br/>
+<hr/>
+<tr th:each="pattern : ${viewparam.getPatterns()}">
+    <nobr th:text="${pattern + '|'}">Part</nobr>
+
+</tr>
+
+<br/>
+<hr/>
+
+<tabel th:each="logs : ${viewparam.getLogs()}">
+    <tr th:each="partlog, state : ${logs.getOneLogRow()}">
+        <nobr th:style="${logs.getColor()}" th:text="${partlog + '|'}">Part</nobr>
+    </tr>
+    <br/>
+    <br/>
+</tabel>
+-->
+<!-- *************************************************************** -->
+
+
+<!--
+<table th:each="onelog : ${mylogs}">
+    <tr th:each="onepartlog : ${onelog.getOneRowLog()}">
+        <nobr th:style="${onepartlog.getColorText()}" th:text="${onepartlog.getOnePartLog() + '|'}">Part</nobr>
+    </tr>
+    <br/>
+</table>
+-->
+
+
+
+<br/>
+<hr/>
+
+<a href="/logs">Back</a>
+
+</body>
+</html>

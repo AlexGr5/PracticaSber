@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Load</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/logs/load}" enctype="multipart/form-data">
+    <label>
+        <input th:type="file" name="file"/>
+        <button type="submit">Upload file</button>
+    </label>
+</form>
+
+<!--
+<form th:method="POST" th:action="@{/logs/load}" enctype="multipart/form-data">
+    File to upload: <input type="file" name="file" />
+    <br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+-->
+
+<!--
+<form method="POST" enctype="multipart/form-data" th:action="/logs/load">
+    File to upload: <input type="file" name="file">
+    <br />
+    <br />
+    <input type="submit" value="Upload"> Press here to upload the file!
+</form>
+-->
+
+</body>
+</html>

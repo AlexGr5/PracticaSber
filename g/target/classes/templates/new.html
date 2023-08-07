@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/logs}" th:object="${inputparams}">
+    <label for="pattern">Enter pattern with %: </label>
+    <input type="text" size="40" th:field="*{pattern}" id="pattern"/>
+    <br/>
+    <label for="sort">Enter sort pattern or Empty: </label>
+    <input type="text" th:field="*{sortPattern}" id="sort"/>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+<hr/>
+
+<tabel th:each="info, state : ${inputparams.getListOnePattern()}">
+    <textarea readonly th:text="${'%' + info.GetNamePattern() +'  -  ' + info.getInformation()}"></textarea>
+    <!--<nobr th:text="${partlog + '|'}">Part</nobr>-->
+</tabel>
+
+</body>
+</html>

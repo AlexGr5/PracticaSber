@@ -1,0 +1,5 @@
+2023-06-20 12:29:50,221 INFO  [stdout] (containersThreadPoolTaskScheduler-1) 	acks = 1
+2023-06-20 12:29:50,008 ERROR  [stdout] (ServerService Thread Pool -- 82) INT: export-data-manager: [ServerService Thread Pool -- 82] 12:29:50 WARN  org.apache.kafka.common.config.AbstractConfig:362 - The configuration 'concurrency' was supplied but isn't a known config.
+2023-06-20 12:29:50,163 WARNING  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 82) WFLYUT0021: Registered web context: '/export-data-manager-war-D-03.038.00_19' for server 'default-server'
+2023-06-20 12:29:50,193 INFO  [org.jboss.as.server] (External Management Request Threads -- 1) WFLYSRV0010: Deployed "export-data-manager-war" (runtime-name : "export-data-manager-war-D-03.038.00_19.war")
+2023-06-20 12:29:50,092 ERROR  [stdout] (consumer-0-C-1) INT: export-data-manager: [consumer-0-C-1      ] 12:29:50 INFO  org.apache.kafka.common.utils.LogContext$LocationIgnorantKafkaLogger:748 - [Consumer clientId=aj-consumer-0, groupId=wf_vm-lt1-bd-wf-1494_export-data-manager] Cluster ID: Mk7N5Ba4TW6mswkNTHvj3g
